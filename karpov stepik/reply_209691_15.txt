@@ -1,0 +1,21 @@
+from sklearn import tree
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+
+pets = pd.read_csv('dogs_n_cats.csv')
+pets = pd.get_dummies(pets)
+pets = pets.drop('Вид_котик', axis=1).rename(columns={'Вид_собачка': 'Pet'})
+
+X_pet = pets.drop('Pet', axis=1)
+y_pet = pets.Pet
+X_train, X_test, y_train, y_test = train_test_split(X_pet, y_pet, test_size=0.3)
+
+clf_new = tree.DecisionTreeClassifier(criterion='entropy', max_depth=3)
+clf_new.fit(X_train, y_train)
+
+df_ts = pd.read_json(r'dataset_209691_15.txt')
+result = clf_new.predict(df_ts)
+pd.Series(result)[result == 1].count()
