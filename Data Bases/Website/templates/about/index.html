@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <div class="text">
+                    <p><h2>Чем мы занимаемся</h2></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <div class="text">
+                    <p><h4>«Молока долина»: настоящие продукты от современных фермеров.</h4></p>
+                    <p>Наше предприятие производит молочную продукцию на основе молока и растительного сырья. Мы производим продукты по собственной рецептуре с оригинальными вкусами, в том числе теми, которых пока нет на Российском рынке. В производстве мы используем сырье без консервантов, ГМО и усилителей вкуса. Более подробную информацию - каталог и презентацию запрашивайте в отделе по работе к клиентами.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 offset-lg-1 col-sm-8 offset-sm-2">
+                <img src="{% static 'assets/images/people_on_ferm.jpg' %}" width="100%" class="image">
+            </div>
+
+        </div>
+    
+        <div class="row">
+            <div class="col-5">
+                <div class="text">
+                    <p><h2>Наши товары</h2></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <div class="text">
+                    <p><h4>Линейка наших продуктов «Молока долина» – это итог многих лет работы, которые теперь обрели конечную форму.</h4></p>
+                    <p>Наша аудитория – это требовательные потребители, которым важно настоящее качество во всем – от продукта до дизайна. Их не проведешь. Они знают себе цену и привыкли к лучшему. Они умеют отличать по-настоящему качественное предложение от легковесного заигрывания с потребителем яркими упаковками. Мы хотим быть откровенными с нашим покупателем. Честное качество – за честную цену.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 offset-lg-1 col-sm-8 offset-sm-2">
+                <div class="product-slider">
+                    <div class="product-image">
+                        <img src="{% static 'assets/images/ayran_cup.jpg' %}" alt="" width="85%" class="image">
+                    </div>
+                    <div class="product-image">
+                        <img src="{% static 'assets/images/Айран бутылка.jpg' %}" alt="" width="85%" class="image">
+                    </div>
+                    <div class="product-image">
+                        <img src="{% static 'assets/images/Тан бутылка.jpg' %}" alt="" width="62.5%" class="image">
+                    </div>
+                    <div class="product-image">
+                        <img src="{% static 'assets/images/smoothie_red.jpeg' %}" alt="" width="100%" class="image">
+                    </div>
+                    <div class="product-image">
+                        <img src="{% static 'assets/images/smoothie_green.jpeg' %}" alt="" width="100%" class="image">
+                    </div>
+                    <div class="product-image">
+                        <img src="{% static 'assets/images/smoothie_yellow.jpeg' %}" alt=""width="100%" class="image">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <div class="text_under">
+                    <p><h5>Контактная информация:</h5></p>
+                    <p><a class = "nav_tel_link" href="tel: +79104108877">+7 910 410 88 77</a> (WhatsApp, Telegram)</p>
+                    <p>molokadolina@outlook.com</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 offset-lg-1 col-sm-12">
+                <div class="text_under">
+                    <p><h5>Юридический адрес</h5></p>
+                    <p>Москва, 109429, Верхние Поля, 51А</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="top"></a>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Подключаем стили slick -->
+    <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}">
+    <!-- Подключаем саму библиотеку slick -->
+    <script src="{% static 'slick/slick.min.js' %}"></script>
+    <!-- Инициализируем слайдер -->
+    <script>
+        $(document).ready(function(){
+            $('.product-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+             });
+        });
+    </script>
+
+
+    <script>
+        function ToTop(){
+            let button = $('.top');
+            $(window).on('scroll', () => {
+                if ($(this).scrollTop() >= 70){
+                    button.fadeIn();
+                } else {
+                    button.fadeOut();
+                }
+            });
+
+            button.on('click', (e) => {
+                e.preventDefault();
+                $('html').animate({scrollTop: 0}, 100);
+            })
+        }
+        ToTop();
+    </script>
+{% endblock %}

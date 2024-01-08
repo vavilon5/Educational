@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <div class="text">
+                    <p><h2>О нас</h2></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="text">
+                    <p><h4>Мы стремимся к тому, чтобы бизнес можно было уверенно сравнивать с лучшими механизмами, где каждая деталь находится на своем месте и обеспечивает общую бесперебойную работу. </h4></p>
+                    <p>Наше предприятие производит молочную продукцию на основе молока и растительного сырья. Мы производим продукты по собственной рецептуре с оригинальными вкусами, в том числе теми, которых пока нет на Российском рынке. В производстве мы используем сырье без консервантов, ГМО и усилителей вкуса. Более подробную информацию - каталог и презентацию запрашивайте в отделе по работе к клиентами.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 offset-lg-0 col-sm-8 offset-sm-2">
+                <img src="{% static 'assets/images/farm-ranch-10.jpg' %}" alt="" width="100%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <div class="text">
+                    <p><h2>Наши партнёры</h2></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="text">
+                    <p><h4><a class="nav_p_link" href="https://imuntouchable.github.io/#">Кафе "Гараж"</a></h4></p>
+                    <p>Если вы привыкли двигаться в ускоренном темпе, то сама идея быстрой еды для вас не будет в новинку. Для тех, кто желает скорее перекусить в перерыве между делами, кафе быстрого питания Гараж предлагает ряд простых, но питательных блюд по умеренным ценам. Еда готовится таким образом, чтобы ее можно было взять с собой. Всех гостей ждут по адресу: Республика Северная Осетия — Алания, улица Морских Пехотинцев, 8. Для гостей заведение работает Пн-вс: 10:00 - 23:00.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 offset-lg-0 col-sm-8 offset-sm-2">
+                <div class="garage-slider">
+                    <div class="garage_img">
+                        <img src="{% static 'assets/images/Кафе гараж.jpg' %}" alt="Кафе гараж" width="50%" class="image">
+                    </div>
+                    <div class="garage_img">
+                        <img src="{% static 'assets/images/garage.jpg' %}" alt="Кафе гараж" width="50%" class="image">
+                    </div>
+                    <div class="garage_img">
+                        <img src="{% static 'assets/images/garage_2.jpg' %}" alt="Кафе гараж" width="68%" class="image">
+                    </div>
+                    <div class="garage_img">
+                        <img src="{% static 'assets/images/garage_3.jpg' %}" alt="Кафе гараж" width="75%" class="image">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <div class="text_under">
+                    <p><h5>Контактная информация:</h5></p>
+                    <p><a class = "nav_tel_link" href="tel: +79104108877">+7 910 410 88 77</a> (WhatsApp, Telegram)</p>
+                    <p>molokadolina@outlook.com</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 offset-lg-1 col-sm-12">
+                <div class="text_under">
+                    <p><h5>Юридический адрес</h5></p>
+                    <p>Москва, 109429, Верхние Поля, 51А</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="top"></a>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Подключаем стили slick -->
+    <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}">
+    <!-- Подключаем саму библиотеку slick -->
+    <script src="{% static 'slick/slick.min.js' %}"></script>
+    <!-- Инициализируем слайдер -->
+    <script>
+        $(document).ready(function(){
+            $('.garage-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                infinite: true,
+                speed: 500,
+                adaptiveHeight: true
+             });
+        });
+    </script>
+    <script>
+        function ToTop(){
+            let button = $('.top');
+            $(window).on('scroll', () => {
+                if ($(this).scrollTop() >= 70){
+                    button.fadeIn();
+                } else {
+                    button.fadeOut();
+                }
+            });
+
+            button.on('click', (e) => {
+                e.preventDefault();
+                $('html').animate({scrollTop: 0}, 100);
+            })
+        }
+        ToTop();
+    </script>
+{% endblock %}

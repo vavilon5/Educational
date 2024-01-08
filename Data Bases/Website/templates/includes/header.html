@@ -1,0 +1,31 @@
+{% load static %}
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class=" col-lg-3 col-sm-3">
+                <a href="{% url 'about:index' %}">
+                    <img src="{% static 'assets/images/logo_horizontal_on-blue.png' %}" alt="Долина молока" width="100%">
+                </a>
+            </div>
+            
+            <div class="col-lg-6 offset-lg-3 col-sm-7 offset-sm-2 ">
+                <div class="nav">
+                    <a class="nav_link" href="{% url 'about:information' %}">О нас</a>
+                    <div class="dropdown">
+                        <button class="dropbtn"><a class="nav_link" href="{% url 'product:production' %}">Продукция</a></button>
+                        <div class="dropdown-content">
+                            <a class="nav_link" href="{% url 'product:tan' %}">Тан турецкий</a>
+                            <a class="nav_link" href="{% url 'product:ayran' %}">Айран турецкий</a>
+                            <a class="nav_link" href="{% url 'product:smoothie' %}">Смузи натуральный</a>
+                        </div>
+                    </div>
+                    <a class="nav_link" href="{% url 'about:factory' %}">Завод</a>
+                    <a class="nav_link" href="{% url 'about:contacts' %}">Контакты</a>
+                    <a class="nav_link_t" href="{% url 'about:map' %}">
+                        <img src="{% static 'assets/images/map__3.png' %}" alt="" title="Карта сайта" width="50vw">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

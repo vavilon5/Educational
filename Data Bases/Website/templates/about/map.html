@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4">
+                <a href="{% url 'about:index' %}" title="Главная">
+                    <img src="{% static 'assets/images/logo_horizontal_on-white__1.png' %}" alt="Долина молока" width="90%">
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 offset-lg-4 col-sm-12 offset-sm-2">
+                <div class="text">
+                    <ul>
+                        <h5><li><a href="{% url 'about:information' %}""./information.html" class="nav_prod">О нас</a></li></h5>
+                        <ul>
+                            <li><h4>О нас</h4></li>
+                            <li><h4>Наши партнёры</h4></li>
+                        </ul>
+
+                        <h5><li><a href="{% url 'product:production' %}" class="nav_prod">Продукция</a></li></h5>
+                        <ul>
+                            <li><h4>Наша продукция</h4></li>
+                            <ul>
+                                <li><a href="{% url 'product:tan' %}" class="nav_prod_t">Тан турецкий</a></li>
+                                <li><a href="{% url 'product:ayran' %}" class="nav_prod_t">Айран турецкий</a></li>
+                                <li><a href="{% url 'product:smoothie' %}" class="nav_prod_t">Смузи натуральный</a></li>
+                            </ul>
+                            <li><h4>Точки продаж</h4></li>
+                        </ul>
+
+                        <h5><li><a href="{% url 'about:factory' %}" class="nav_prod">Завод</a></li></h5>
+                        <ul>
+                            <li><h4>О заводе</h4></li>
+                            <li><h4>Экологичность</h4></li>
+                            <li><h4>Наши партнёры</h4></li>
+                        </ul>
+
+                        <h5><li><a href="{% url 'about:contacts' %}" class="nav_prod">Контакты</a></li></h5>
+                        <ul>
+                            <li><h4>Коммерческий отдел</h4></li>
+                            <li><h4>Адрес</h4></li>
+                            <li><h4>Реквизиты комании</h4></li>
+                            <li><h4>Обратная связь</h4></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <div class="text_under">
+                    <p><h5>Контактная информация:</h5></p>
+                    <p><a class = "nav_tel_link" href="tel: +79104108877">+7 910 410 88 77</a> (WhatsApp, Telegram)</p>
+                    <p>molokadolina@outlook.com</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 offset-lg-1 col-sm-12">
+                <div class="text_under">
+                    <p><h5>Юридический адрес</h5></p>
+                    <p>Москва, 109429, Верхние Поля, 51А</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="top"></a>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function ToTop(){
+            let button = $('.top');
+            $(window).on('scroll', () => {
+                if ($(this).scrollTop() >= 70){
+                    button.fadeIn();
+                } else {
+                    button.fadeOut();
+                }
+            });
+
+            button.on('click', (e) => {
+                e.preventDefault();
+                $('html').animate({scrollTop: 0}, 100);
+            })
+        }
+        ToTop();
+    </script>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text">
+                    <h2>О заводе</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="text">
+                    <p>На строительство завода ушло два года. При возведении объекта использовался опыт и инновационное оборудование отечественных компаний, а также предприятий Венгрии, Италии и Сербии. Инфраструктура завода включает в себя комплекс высокотехнологичных и экологичных объектов - котельная, очистные сооружения, электроподстанция, административно-бытовые комплексы, а также две лаборатории для проверки качества выпускаемой продукции.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1 col-sm-8 offset-sm-2">
+                <img src="{% static 'assets/images/factory_1.jpg' %}" alt="" width="100%" class="image">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="text">
+                    <h2>Экологичность</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="text">
+                    <p>Вопрос экологии нас волнует не меньше, чем качество нашей продукции. Заботясь об экологии, в производстве мы используем стеклотару и экологически чистую пергаментную бумагу. В отличие от стерилизации, которая «убивает» практически все полезное в молоке, на заводе используют метод пастеризации, при котором все полезные свойства молока сохраняются. Наш завод работает только с натуральным сырьём, поставляемым с ферм рязанской, липецкой, тамбовской и  тульской областей. Мы не используем в производстве восстановленное молоко, различные растительные жиры и консерванты</p>
+                </div>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1 col-sm-8 offset-sm-2">
+                <img src="{% static 'assets/images/ecology.jpg' %}" alt="" width="100%" class="image">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="text">
+                    <h2>Контроль качества</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="text">
+                    <p>На заводе работают две лаборатории - микробиологическая и физико-химическая, в которых установлено самое современное оборудование. Качество продукции мы контролируем на каждом технологическом шаге. Cтандартный ежедневный анализ молока включает проверку на содержание соматических клеток, антибиотиков и ингибиторов, а также определение массовой доли белка, жира и бактериологической обсемененности. Мы также регулярно проводим подробный анализ молока в независимой лаборатории, чтобы иметь возможность дополнительного контроля при сопоставлении результатов различных лабораторий.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1 col-sm-8 offset-sm-2">
+                <img class="image" src="{% static 'assets/images/inside.jpg' %}" alt="" class="image" width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <div class="text_under">
+                    <p><h5>Контактная информация:</h5></p>
+                    <p><a class = "nav_tel_link" href="tel: +79104108877">+7 910 410 88 77</a> (WhatsApp, Telegram)</p>
+                    <p>molokadolina@outlook.com</p>
+                </div>
+            </div>
+
+            <div class="col-lg-5 offset-lg-2 col-sm-12">
+                <div class="text_under">
+                    <p><h5>Юридический адрес</h5></p>
+                    <p>Москва, 109429, Верхние Поля, 51А</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="top"></a>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
+    <script>
+        function ToTop(){
+            let button = $('.top');
+            $(window).on('scroll', () => {
+                if ($(this).scrollTop() >= 70){
+                    button.fadeIn();
+                } else {
+                    button.fadeOut();
+                }
+            });
+
+            button.on('click', (e) => {
+                e.preventDefault();
+                $('html').animate({scrollTop: 0}, 100);
+            })
+        }
+        ToTop();
+    </script>
+{% endblock %}

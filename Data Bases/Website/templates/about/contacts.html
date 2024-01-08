@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4">
+                <img src="{% static 'assets/images/logo_horizontal_on-white__1.png' %}" alt="" width="100%">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-5">
+                <div class="text">
+                    <p><h2>Контакты:</h2></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="text">
+
+                    <div class="text_p">
+                        <h5>Коммерческий отдел</h5>
+                        <p><a class = "nav_tel_link" href="tel: +79104108877">+7 910 410 88 77</a> (WhatsApp, Telegram)</p>
+                        <p>Приём заявок с 9:00 до 19:00</p>
+                    </div>
+
+                    <div class="text_p">
+                        <h5>Адрес</h5>
+                        <p>Солнечногорск, Красная улица, д. 186</p>
+                    </div>
+
+                    <div class="text_p">
+                        <h5>Реквизиты компании</h5>
+                        <p>
+                            ИНН: 111111 <br>
+                            Банк: Сбербанк
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1 col-md-8 offset-md-2">
+                <div class="text">
+                    <div class="text_p">
+                        <h5>Обратная связь</h5>
+                    </div>
+                </div>
+
+                <div class="form">
+                    <form action="#" method="post" id="message" width="70%">
+                        <input type="text" name="name" class="form_control input-lg" placeholder="ФИО*" style="width: 100%;">
+                        <input type="tel" name="tel" class="form_control input-lg" placeholder="Телефон" style="width: 100%;">
+                        <input type="email" name="email" class="form_control input-lg" placeholder="e-mail*" style="width: 100%;" required>
+                        <input type="text" name="message" class="form_control input-lg" placeholder="Ваше сообщение*" style="width: 100%;" required>
+                        <input name="submit" type="submit" class="btn btn-primary form_btn" value="Отправить сообщение">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

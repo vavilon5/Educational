@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <div class="text">
+                    <h2>Айран турецкий</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <div class="text">
+                    <p>Турецкий Айран – это традиционный напиток родом из солнечной Турции. Этот напиток не только отлично справляется с жаждой, но и является хорошим источником пищи, поскольку содержит в своём составе питательные вещества и аминокислоты. Наш продукт не имеет аналогов, он производится без химических добавок, из натурального молока. В продукции марки «Молока долина» Вы не встретите добавления красителей, ГМО и прочих вредных организму добавок химической промышленности. Только натуральные продукты высокого качества. Попробуйте сами!</p>
+                </div>
+            </div>
+            <div class="col-lg-6 offset-lg-1 col-sm-8 offset-sm-2">
+                <div class="production-slider">
+                    <div class="ayran_img"><img src="{% static 'assets/images/ayran_cup.jpg' %}" alt="Айран" class="image" width = 65%></div>
+                    <div class="ayran_img"><img src="{% static 'assets/images/Айран бутылка.jpg' %}" alt="Айран" class="image" width = 65%></div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <div class="text_under">
+                    <p><h5>Контактная информация:</h5></p>
+                    <p><a class = "nav_tel_link" href="tel: +79104108877">+7 910 410 88 77</a> (WhatsApp, Telegram)</p>
+                    <p>molokadolina@outlook.com</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 offset-lg-1 col-sm-12">
+                <div class="text_under">
+                    <p><h5>Юридический адрес</h5></p>
+                    <p>Москва, 109429, Верхние Поля, 51А</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="top"></a>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Подключаем стили slick -->
+    <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}">
+    <!-- Подключаем саму библиотеку slick -->
+    <script src="{% static 'slick/slick.min.js' %}"></script>
+    <!-- Инициализируем слайдер -->
+    <script>
+        $(document).ready(function(){
+            $('.garage-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                infinite: true,
+                speed: 500,
+                adaptiveHeight: true
+             });
+        });
+    </script>
+{% endblock %}
